@@ -86,8 +86,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.account_balance,
-                        size: 60, color: Color(0xFF0A2540)),
+                    Image.asset(
+                      "assets/logo.png",
+                      height: 80,
+                    ),
 
                     const SizedBox(height: 10),
 

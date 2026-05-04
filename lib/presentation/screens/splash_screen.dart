@@ -80,13 +80,13 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0A2540), // fintech dark bg
+      backgroundColor: const Color(0xFF2A76C8), // fintech dark bg
       body: Center(
         child: ScaleTransition(
           scale: _scaleAnimation,
           child: Image.asset(
             "assets/logo.png",
-            height: 100,
+            height: 200,
           ),
         ),
       ),
