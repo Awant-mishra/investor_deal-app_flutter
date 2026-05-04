@@ -214,11 +214,7 @@ flutter test
 
 | Login | List | Filter | Detail | Interest |
 |------|----------|--------|--------|-----------|
-<<<<<<< HEAD
-| ![](screenshots/login.png) | ![](screenshots/list.png) | ![](screenshots/Filters.png) | ![](screenshots/Details.png) | ![](screenshots/interest.png) |
-=======
-| ![](screenshots/login.png) | ![](screenshots/List.png) | ![](screenshots/filter.png) | ![](screenshots/detail.png) | ![](screenshots/Interest.png) |
->>>>>>> e3d2d12 (Update Screenshots)
+| ![](screenshots/login.png) | ![](screenshots/list.png) | ![](screenshots/filter.png) | ![](screenshots/detail.png) | ![](screenshots/interest.png) |
 
 ---
 
