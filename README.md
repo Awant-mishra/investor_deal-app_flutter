@@ -27,7 +27,7 @@ A modern fintech-style Flutter application where corporates post investment oppo
 
 ## 📱 Screens
 
-| Login | Deal List | Filter | Detail | Interests |
+| Login | List | Filter | Detail | Interest |
 |------|----------|--------|--------|-----------|
 | ![](screenshots/login.png) | ![](screenshots/List.png) | ![](screenshots/Filters.png) | ![](screenshots/Details.png) | ![](screenshots/Interest.png) |
 
