@@ -67,6 +67,7 @@ This app follows Clean Architecture + BLoC pattern.
 🔄 Data Flow
 
 UI (Screens)
+
    ↓
 BLoC (Business Logic)
    ↓
@@ -201,15 +202,11 @@ flutter test
 
 ---
 
-📸 Screenshots
+## 📱 Screens
 
-«Add images inside "/screenshots" folder»
-
-screenshots/
-├── login.png
-├── deal_list.png
-├── deal_detail.png
-├── interests.png
+| Login | List | Filter | Detail | Interest |
+|------|----------|--------|--------|-----------|
+| ![](screenshots/login.png) | ![](screenshots/List.png) | ![](screenshots/Filters.png) | ![](screenshots/Details.png) | ![](screenshots/Interest.png) |
 
 ---
 
@@ -238,8 +235,8 @@ flutter build apk
 
 👨‍💻 Author
 
-Ankit Kumar 
-Flutter Developer
+- Ankit Kumar 
+- Flutter Developer
 
 ---
 
