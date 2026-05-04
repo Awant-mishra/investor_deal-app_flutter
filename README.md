@@ -69,12 +69,19 @@ This app follows Clean Architecture + BLoC pattern.
 UI (Screens)
 
    ↓
+   
 BLoC (Business Logic)
+
    ↓
+   
 Repository
+
    ↓
+   
 Data Source (Local JSON)
+
    ↓
+   
 Response → Back to UI via State
 
 ---
