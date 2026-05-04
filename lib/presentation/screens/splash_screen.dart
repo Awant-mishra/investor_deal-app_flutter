@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../business_logic/blocs/deal/deal_event.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../data/data_sources/deal_local_data_source.dart';
 import '../../data/repositories/deal_repository.dart';
 import '../../business_logic/blocs/deal/deal_bloc.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../business_logic/blocs/deal/deal_event.dart';
 import 'deal_list_screen.dart';
 import 'login_screen.dart';
 
@@ -15,14 +16,32 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
+
   @override
   void initState() {
     super.initState();
-    checkLogin();
+
+    /// 🎬 Animation setup
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 800),
+    );
+
+    _scaleAnimation = Tween<double>(begin: 0.5, end: 1.0).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeOutBack),
+    );
+
+    _controller.forward();
+
+    /// ⏳ Navigate after delay
+    navigate();
   }
 
-  Future<void> checkLogin() async {
+  Future<void> navigate() async {
     await Future.delayed(const Duration(seconds: 2));
 
     final prefs = await SharedPreferences.getInstance();
@@ -53,12 +72,22 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: const Color(0xFF0A2540), // fintech dark bg
       body: Center(
-        child: Text(
-          "Investor App",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        child: ScaleTransition(
+          scale: _scaleAnimation,
+          child: Image.asset(
+            "assets/logo.png",
+            height: 100,
+          ),
         ),
       ),
     );

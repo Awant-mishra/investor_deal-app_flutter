@@ -6,6 +6,8 @@ class Deal {
   final double roi;
   final String risk;
   final String status;
+  final String ? description;
+
 
   Deal({
     required this.id,
@@ -15,6 +17,8 @@ class Deal {
     required this.roi,
     required this.risk,
     required this.status,
+    this.description,
+
   });
 
   factory Deal.fromJson(Map<String, dynamic> json) {
@@ -26,6 +30,7 @@ class Deal {
       roi: (json['roi'] as num).toDouble(),
       risk: json['risk'],
       status: json['status'],
+      description: json['description'],
     );
   }
 

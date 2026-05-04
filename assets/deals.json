@@ -6,7 +6,8 @@
     "investment": 500000,
     "roi": 18.5,
     "risk": "Medium",
-    "status": "Open"
+    "status": "Open",
+    "description": "A past growing tech company focusing on AI based solution."
   },
   {
     "id": "2",
