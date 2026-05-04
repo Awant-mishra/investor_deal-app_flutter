@@ -9,7 +9,6 @@ class DealBloc extends Bloc<DealEvent, DealState> {
 
   List<Deal> allDeals = [];
 
-  // 👉 Current filters (important for copyWith behavior)
   String? currentRisk;
   String? currentIndustry;
   double? currentMinRoi;
@@ -20,12 +19,13 @@ class DealBloc extends Bloc<DealEvent, DealState> {
     on<LoadDeals>(_onLoadDeals);
     on<SearchDeals>(_onSearchDeals);
     on<FilterDeals>(_onFilterDeals);
+    on<ClearFilters>(_onClearFilters);
   }
 
-  // ================= LOAD =================
   Future<void> _onLoadDeals(
       LoadDeals event, Emitter<DealState> emit) async {
     emit(DealLoading());
+
     try {
       allDeals = await repository.getDeals();
 
@@ -38,38 +38,43 @@ class DealBloc extends Bloc<DealEvent, DealState> {
     }
   }
 
-  // ================= SEARCH =================
   void _onSearchDeals(
       SearchDeals event, Emitter<DealState> emit) {
     currentSearch = event.query;
-
-    final filtered = _applyAllFilters();
-
     emit(DealLoaded(
       allDeals: allDeals,
-      filteredDeals: filtered,
+      filteredDeals: _applyFilters(),
     ));
   }
 
-  // ================= FILTER =================
   void _onFilterDeals(
       FilterDeals event, Emitter<DealState> emit) {
-    // 👉 copyWith-style update (only update what comes)
     currentRisk = event.risk ?? currentRisk;
     currentIndustry = event.industry ?? currentIndustry;
     currentMinRoi = event.minRoi ?? currentMinRoi;
     currentMaxRoi = event.maxRoi ?? currentMaxRoi;
 
-    final filtered = _applyAllFilters();
-
     emit(DealLoaded(
       allDeals: allDeals,
-      filteredDeals: filtered,
+      filteredDeals: _applyFilters(),
     ));
   }
 
-  // ================= CORE FILTER FUNCTION =================
-  List<Deal> _applyAllFilters() {
+  void _onClearFilters(
+      ClearFilters event, Emitter<DealState> emit) {
+    currentRisk = null;
+    currentIndustry = null;
+    currentMinRoi = null;
+    currentMaxRoi = null;
+    currentSearch = "";
+
+    emit(DealLoaded(
+      allDeals: allDeals,
+      filteredDeals: allDeals,
+    ));
+  }
+
+  List<Deal> _applyFilters() {
     return allDeals.where((deal) {
       final matchSearch = deal.companyName
           .toLowerCase()
@@ -86,21 +91,10 @@ class DealBloc extends Bloc<DealEvent, DealState> {
           (currentMinRoi == null || deal.roi >= currentMinRoi!) &&
               (currentMaxRoi == null || deal.roi <= currentMaxRoi!);
 
-      return matchSearch && matchRisk && matchIndustry && matchRoi;
+      return matchSearch &&
+          matchRisk &&
+          matchIndustry &&
+          matchRoi;
     }).toList();
-  }
-
-  // ================= OPTIONAL: CLEAR FILTER =================
-  void clearFilters(Emitter<DealState> emit) {
-    currentRisk = null;
-    currentIndustry = null;
-    currentMinRoi = null;
-    currentMaxRoi = null;
-    currentSearch = "";
-
-    emit(DealLoaded(
-      allDeals: allDeals,
-      filteredDeals: allDeals,
-    ));
   }
 }

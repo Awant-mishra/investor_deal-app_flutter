@@ -133,14 +133,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet>
                 Expanded(
                   child: OutlinedButton(
                     onPressed: () {
-                      dealBloc.add(
-                        FilterDeals(
-                          risk: null,
-                          industry: null,
-                          minRoi: null,
-                          maxRoi: null,
-                        ),
-                      );
+                      dealBloc.add(ClearFilters());
                       Navigator.pop(context);
                     },
                     child: const Text("Clear"),

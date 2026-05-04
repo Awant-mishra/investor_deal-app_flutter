@@ -1,15 +1,12 @@
 abstract class DealEvent {}
 
-// Load all deals
 class LoadDeals extends DealEvent {}
 
-// Search deals
 class SearchDeals extends DealEvent {
   final String query;
   SearchDeals(this.query);
 }
 
-// Filter deals
 class FilterDeals extends DealEvent {
   final String? risk;
   final String? industry;
@@ -23,3 +20,5 @@ class FilterDeals extends DealEvent {
     this.maxRoi,
   });
 }
+
+class ClearFilters extends DealEvent {}

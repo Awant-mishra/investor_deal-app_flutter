@@ -57,7 +57,10 @@ class DealListScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => const MyInterestsScreen(),
+                  builder: (_) => BlocProvider.value(
+                    value: context.read<DealBloc>(),
+                    child: const MyInterestsScreen(),
+                  ),
                 ),
               );
             },
