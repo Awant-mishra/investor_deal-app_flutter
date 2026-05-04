@@ -213,7 +213,7 @@ flutter test
 
 | Login | List | Filter | Detail | Interest |
 |------|----------|--------|--------|-----------|
-| ![](screenshots/login.png) | ![](screenshots/List.png) | ![](screenshots/Filters.png) | ![](screenshots/Details.png) | ![](screenshots/Interest.png) |
+| ![](screenshots/login.png) | ![](screenshots/list.png) | ![](screenshots/Filters.png) | ![](screenshots/Details.png) | ![](screenshots/interest.png) |
 
 ---
 
