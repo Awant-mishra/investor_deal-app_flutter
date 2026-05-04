@@ -48,4 +48,3 @@ A modern fintech-style Flutter application where corporates post investment oppo
 ```bash
 flutter pub get
 flutter run
-___
