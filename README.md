@@ -17,43 +17,44 @@ A modern fintech-style Flutter application where corporates post investment oppo
 
 ---
 
-📁 Project Structure
+## 📁 Project Structure
 
+```bash
 lib/
 │
 ├── core/
 │   ├── constants/
 │   │   └── app_colors.dart
-│   ├── theme/
-│   │   └── app_theme.dart
+│   └── theme/
+│       └── app_theme.dart
 │
 ├── data/
 │   ├── models/
 │   │   └── deal_model.dart
 │   ├── repositories/
 │   │   └── deal_repository.dart
-│   ├── data_sources/
-│   │   └── deal_local_data_source.dart
+│   └── data_sources/
+│       └── deal_local_data_source.dart
 │
 ├── business_logic/
 │   └── blocs/
 │       └── deal/
 │           ├── deal_bloc.dart
 │           ├── deal_event.dart
-│           ├── deal_state.dart
+│           └── deal_state.dart
 │
 ├── presentation/
 │   ├── screens/
-│   │   ├── deal_detail_screen.dart
-│   │   ├── deal_list_screen.dart
+│   │   ├── splash_screen.dart
 │   │   ├── login_screen.dart
-│   │   ├── my_interest_screen.dart
-│   │   └── splash_screen.dart
+│   │   ├── deal_list_screen.dart
+│   │   ├── deal_detail_screen.dart
+│   │   └── my_interest_screen.dart
 │   │
 │   └── widgets/
 │       ├── deal_card.dart
 │       ├── deal_skeleton.dart
-│       ├── filter_button_sheet.dart
+│       ├── filter_bottom_sheet.dart
 │       └── search_bar.dart
 │
 └── main.dart
