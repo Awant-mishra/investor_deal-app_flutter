@@ -120,7 +120,7 @@ class _DealDetailScreenState extends State<DealDetailScreen> {
         child: Column(
           children: [
 
-            /// 🏢 COMPANY OVERVIEW
+            ///  COMPANY OVERVIEW
             sectionCard(
               "Company Overview",
               Text(
@@ -129,7 +129,7 @@ class _DealDetailScreenState extends State<DealDetailScreen> {
               ),
             ),
 
-            /// 💰 FINANCIAL HIGHLIGHTS
+            /// FINANCIAL HIGHLIGHTS
             sectionCard(
               "Financial Highlights",
               Row(
@@ -160,7 +160,7 @@ class _DealDetailScreenState extends State<DealDetailScreen> {
               ),
             ),
 
-            /// 📈 ROI GRAPH
+            ///  ROI GRAPH
             sectionCard(
               "ROI Projection",
               SizedBox(
@@ -188,7 +188,7 @@ class _DealDetailScreenState extends State<DealDetailScreen> {
               ),
             ),
 
-            /// ⚠️ RISK EXPLANATION
+            ///  RISK EXPLANATION
             sectionCard(
               "Risk Explanation",
               Text(getRiskDescription(deal.risk)),
@@ -196,7 +196,7 @@ class _DealDetailScreenState extends State<DealDetailScreen> {
 
             const SizedBox(height: 20),
 
-            /// ❤️ INTEREST BUTTON
+            ///  INTEREST BUTTON
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(

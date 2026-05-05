@@ -87,7 +87,7 @@ class _MyInterestsScreenState
                       ),
                     );
 
-                    loadInterests(); // 🔄 refresh
+                    loadInterests();
                   },
 
                   trailing: IconButton(

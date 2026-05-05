@@ -44,7 +44,7 @@ class DealCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              /// 🔥 COMPANY NAME + STATUS
+              ///  COMPANY NAME + STATUS
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -77,7 +77,7 @@ class DealCard extends StatelessWidget {
 
               const SizedBox(height: 6),
 
-              /// 🏷️ INDUSTRY TAG
+              ///  INDUSTRY TAG
               Container(
                 padding:
                 const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
@@ -93,7 +93,7 @@ class DealCard extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-              /// 💰 DETAILS ROW
+              ///  DETAILS ROW
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -104,7 +104,7 @@ class DealCard extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-              /// ⚠️ RISK CHIP
+              ///  RISK CHIP
               Chip(
                 label: Text(deal.risk),
                 backgroundColor: getRiskColor().withOpacity(0.2),

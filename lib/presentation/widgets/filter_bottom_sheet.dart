@@ -76,7 +76,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet>
 
             const SizedBox(height: 20),
 
-            /// 🎯 RISK FILTER
+            ///  RISK FILTER
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: ["Low", "Medium", "High"]
@@ -90,7 +90,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet>
 
             const SizedBox(height: 20),
 
-            /// 🏭 INDUSTRY FILTER
+            ///  INDUSTRY FILTER
             Wrap(
               spacing: 10,
               children: ["Technology", "Healthcare", "Finance", "Agriculture"]
@@ -104,7 +104,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet>
 
             const SizedBox(height: 20),
 
-            /// 📊 ROI SLIDER
+            ///  ROI SLIDER
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -127,7 +127,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet>
 
             const SizedBox(height: 20),
 
-            /// 🔘 BUTTONS
+            ///  BUTTONS
             Row(
               children: [
                 Expanded(

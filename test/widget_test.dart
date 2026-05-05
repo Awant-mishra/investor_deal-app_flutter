@@ -27,13 +27,10 @@ void main() {
           ),
         );
 
-        /// Wait for UI + BLoC to load
         await tester.pumpAndSettle();
 
-        /// ✅ Check AppBar title
         expect(find.text('Investor Deals'), findsOneWidget);
 
-        /// ✅ Check at least one deal (from JSON)
         expect(find.text('TechCorp'), findsOneWidget);
       });
 }

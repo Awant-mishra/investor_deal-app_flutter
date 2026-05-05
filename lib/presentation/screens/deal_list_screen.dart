@@ -24,7 +24,7 @@ class DealListScreen extends StatelessWidget {
     );
   }
 
-  /// ✅ FIXED: Proper Bloc passing to bottom sheet
+  ///  FIXED: Proper Bloc passing to bottom sheet
   void showFilterBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -44,14 +44,14 @@ class DealListScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F7FA),
 
-      /// 🔥 APPBAR
+      ///  APPBAR
       appBar: AppBar(
         title: const Text(""),
         actions: [
           IconButton(
             icon: const Icon(
               Icons.favorite,
-              color: Colors.red, // ❤️ red icon
+              color: Colors.red,
             ),
             onPressed: () {
               Navigator.push(
@@ -71,17 +71,17 @@ class DealListScreen extends StatelessWidget {
           ),
         ],
       ),
-      /// 🎯 FLOATING FILTER BUTTON
+      ///  FLOATING FILTER BUTTON
       floatingActionButton: FloatingActionButton(
         onPressed: () => showFilterBottomSheet(context),
         child: const Icon(Icons.filter_list),
       ),
 
-      /// 📊 BODY
+      ///  BODY
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// 👋 HEADER
+          ///  HEADER
           Padding(
             padding: const EdgeInsets.all(16),
             child: Row(
@@ -89,7 +89,7 @@ class DealListScreen extends StatelessWidget {
                 Image.asset("assets/logo.png", height: 40),
                 const SizedBox(width: 10),
                 const Text(
-                  "Welcome Ankit 👋",
+                  "Welcome Ankit",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -99,12 +99,12 @@ class DealListScreen extends StatelessWidget {
             ),
           ),
 
-          /// 📦 LIST AREA
+          ///  LIST AREA
           Expanded(
             child: BlocBuilder<DealBloc, DealState>(
               builder: (context, state) {
 
-                /// 🔄 LOADING
+                ///  LOADING
                 if (state is DealLoading) {
                   return ListView.builder(
                     itemCount: 5,
@@ -112,16 +112,16 @@ class DealListScreen extends StatelessWidget {
                   );
                 }
 
-                /// ❌ ERROR
+                ///  ERROR
                 if (state is DealError) {
                   return Center(child: Text(state.message));
                 }
 
-                /// ✅ LOADED
+                ///  LOADED
                 if (state is DealLoaded) {
                   final List<Deal> deals = state.filteredDeals;
 
-                  /// 📭 EMPTY STATE
+                  ///  EMPTY STATE
                   if (deals.isEmpty) {
                     return const Center(
                       child: Column(
@@ -136,7 +136,7 @@ class DealListScreen extends StatelessWidget {
                     );
                   }
 
-                  /// 🎬 LIST
+                  ///  LIST
                   return ListView.builder(
                     padding: const EdgeInsets.only(bottom: 80),
                     itemCount: deals.length,

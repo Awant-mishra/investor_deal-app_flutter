@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
-    /// 🎬 Animation setup
+    ///  Animation setup
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 800),
@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.forward();
 
-    /// ⏳ Navigate after delay
+    ///  Navigate after delay
     navigate();
   }
 

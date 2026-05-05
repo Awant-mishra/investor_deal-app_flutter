@@ -8,10 +8,10 @@ abstract class DealState extends Equatable {
   List<Object?> get props => [];
 }
 
-/// ⏳ Loading
+///  Loading
 class DealLoading extends DealState {}
 
-/// ✅ Loaded
+///  Loaded
 class DealLoaded extends DealState {
   final List<Deal> allDeals;
   final List<Deal> filteredDeals;
@@ -25,7 +25,7 @@ class DealLoaded extends DealState {
   List<Object?> get props => [allDeals, filteredDeals];
 }
 
-/// ❌ Error
+///  Error
 class DealError extends DealState {
   final String message;
 
